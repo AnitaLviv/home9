@@ -232,6 +232,9 @@ top: 100px;
 
 .header-navi__link {
 	background: url(../img/navi.png);
+        -webkit- background-size: cover;/* для Safari и Chrome */
+        -moz-background-size: cover;/* для Firefox 3.5+ */
+        -o-background-size: cover;
 	background-size: cover;
 	display:block;
 	height: 19px;
@@ -242,6 +245,9 @@ top: 100px;
 
 .header-navi__link:hover {
 	background: url(../img/navi_white.png);
+        -webkit- background-size: cover;/* для Safari и Chrome */
+        -moz-background-size: cover;/* для Firefox 3.5+ */
+        -o-background-size: cover;
 	background-size: cover;
 }
 
@@ -254,8 +260,10 @@ top: 100px;
 .content-top {
 	width: 100%;
 	height: 340px;
-	background: -moz-linear-gradient(top,  rgba(116,80,131,1) 0%, rgba(50,37,57,1) 100%);
-	background: -webkit-linear-gradient(top,  rgba(116,80,131,1) 0%,rgba(50,37,57,1) 100%); 
+	background: -moz-linear-gradient(top,  rgba(116,80,131,1) 0%, rgba(50,37,57,1) 100%); /* Firefox 3.6 */
+	background: -webkit-linear-gradient(top,  rgba(116,80,131,1) 0%,rgba(50,37,57,1) 100%);/* Safari & Chrome */ 
+	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#745083', endColorstr='#322539'); /* IE6 & IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#745083', endColorstr='322539')"; /* IE8 */
 	background: linear-gradient(to bottom,  rgba(116,80,131,1) 0%,rgba(50,37,57,1) 100%);
 	border-top: 1px solid #33253a;
 	border-bottom: 1px solid #0d151b;
@@ -374,6 +382,9 @@ top: 100px;
 
 .content-center__link:hover {
 	background: url(../img/navi_center_dark.png);
+        -webkit- background-size: cover;/* для Safari и Chrome */
+        -moz-background-size: cover;/* для Firefox 3.5+ */
+        -o-background-size: cover;
 	background-size: cover;
 }
 
@@ -470,7 +481,8 @@ top: 100px;
 	font-family: 'league-gothic.regular', Arial, sans-serif;
 	font-size: 48px;
 	color: #454545;
-	text-shadow: -1px -1px 1px rgba(205,205,205,40)
+       	text-shadow: -1px -1px 1px rgba(205,205,205,40);
+      
 
 }
 
@@ -485,7 +497,7 @@ top: 100px;
 	font-family: 'Open Sans', Tahoma, sans-serif;
 	font-size: 16px;
 	color: #787878;
-	text-shadow: 1px 1px 1px rgba(255,255,255,40)
+	text-shadow: 1px 1px 1px rgba(255,255,255,40);
 }
 
 .content-bottom__box__right {
@@ -501,7 +513,7 @@ top: 100px;
 	font-size: 30px;
 	color: #454545;
 	padding-bottom: 7px; 
-	text-shadow: 1px 1px 1px rgba(255,255,255,40)
+   	text-shadow: 1px 1px 1px rgba(255,255,255,40);
 }
 
 .content__logo{
@@ -567,6 +579,9 @@ top: 100px;
 	width: 100%;
 	height:114px;
 	background:url(../img/footer.png);
+        -webkit- background-size: cover;/* для Safari и Chrome */
+        -moz-background-size: cover;/* для Firefox 3.5+ */
+        -o-background-size: cover;
 	background-size: cover;
 }
 
@@ -603,6 +618,7 @@ top: 100px;
 }
 
 @media (max-width: 960px) {
+
 .wrapper{
 		width: 768px;
 }
@@ -692,7 +708,7 @@ top: 100px;
 	.header-slider__h2 {
 		width: 310px;
 	}
-}
+
 
 @media (max-width: 768px) {
 
@@ -700,8 +716,9 @@ top: 100px;
 .menu--header .menu__li .menu__link {
 		display: block;
                 width: 240px;
-                opacity: 0.9;
-            
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=90)"; /* только  для IE8 */
+                -khtml-opacity: .9;/* Konqueror 3.1, Safari 1.1 */
+                opacity: .9;
 }  
         
 .menu__li {
@@ -709,7 +726,12 @@ top: 100px;
 }
 
 .menu__link:nth-child(5) {
-border-radius: 10px;}
+
+            -webkit-border-radius: 10px; /* для Safari и Chrome */
+            -moz-border-radius: 10px; /* для Firefox 3.5+ */
+             border-radius: 10px;
+
+}
 
 .menu--header .menu__li .menu__link img:hover {
                 opacity: 0.3;
@@ -795,7 +817,7 @@ border-radius: 10px;}
 	
 }
 
-.content-top{
+.content-top {
 		height: 515px;
 		padding-top: 80px;
 	
@@ -901,12 +923,20 @@ border-radius: 10px;}
 
 .content__logo44 img:hover {
 		display: block;
-                opacity: .4;
+                opacity: .4;/*Other browsers*/
+                 opacity: .4; /*  Safari 2.0+ , Chrome, Firefox Opera, */
+                -moz-opacity: .4;/* Mozilla 1.6 */
+                -khtml-opacity: .4;/* Konqueror 3.1, Safari 1.1 */
+                 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40); /* для IE6, IE7, и IE8 */
+                 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=40)"; /* только  для IE8 */
 }
 
 .footer {
 		height: 200px;
-		border-size: cover;
+                -webkit- background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+		background-size: cover;
 }
 
 .menu--footer .menu__link {
